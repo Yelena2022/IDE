@@ -1,6 +1,5 @@
 """Игра: "Угадай число""" #2
 
-from re import X
 import numpy as np
 
 min = 1
@@ -12,11 +11,11 @@ while True:
     count  += 1
     X = int((min + max)/2)
     
-    if X > number:
-        max = X
+    if mid > number:
+        max = mid
         
-    elif X < number:
-        min = X
+    elif mid < number:
+        min = mid
             
     else:
         print(f"Машина угадала число! Это число = {number}, за {count} попыток.")
