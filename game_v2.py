@@ -1,9 +1,9 @@
-#"""Игра угадай число"""
+"""Игра угадай число"""
 # Компьютер сам загадывает число (Тренировочный файл)
 
 import numpy as np
 
-def random_predict(number:int=1) -> int:
+def random_predict(number:int=1) -> int: # -> int: """+ Enter -для написания документации(какие аргументы мы принимаем и на выходе)
     """рандомно угадываем число
     
     Args:
@@ -34,7 +34,7 @@ def score_game(random_predict) ->int:
         int: Среднее количество попыток
     """
     
-    count_ls = []
+    count_ls = [] # список для сохранения кол-ва попыток угадывания
     np.random.seed(1) #фиксируем Сид для воспроизводимости
     random_array = np.random.randint(1, 101, size=(1000)) #загадали список чисел
     
@@ -42,10 +42,10 @@ def score_game(random_predict) ->int:
         count_ls.append(random_predict(number))
         
     score = int(np.mean(count_ls))
-    print(f'Ваш алгоритм угадывает число в среднем за:{score} попыток')
+    print(f'Ваш алгоритм угадывает число {number} в среднем за:{score} попыток')
     return(score)
 
 
 if __name__== '__main__':
-#RUN
-score_game(random_predict)
+    #RUN (запускаем)
+    score_game(random_predict)
